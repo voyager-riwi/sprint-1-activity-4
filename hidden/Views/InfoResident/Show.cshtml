@@ -1,0 +1,118 @@
+<div class="container mt-5">
+  <div class="card">
+    <div class="card-header">
+      <ul class="nav nav-tabs card-header-tabs">
+        <li class="nav-item">
+          <a class="nav-link" asp-area="" asp-controller="Users" asp-action="Show">General</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" asp-area="" asp-controller="InfoResident" asp-action="Show">Inf de residencia</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" asp-area="" asp-controller="InfoContact" asp-action="Show">Inf de contacto</a>
+        </li>
+      </ul>
+    </div>
+    <div class="card-body">
+      <h5 class="card-title">Información de residencia de Pedro</h5>
+      <form>
+        <div class="mb-3">
+          <label for="calle" class="form-label">Dirección</label>
+          <input type="text" class="form-control" id="calle" value="Calle 123 #45-67">
+        </div>
+        <div class="mb-3">
+          <label for="ciudad" class="form-label">Ciudad</label>
+          <input type="text" class="form-control" id="ciudad" value="Medellín">
+        </div>
+        <div class="mb-3">
+          <label for="pais" class="form-label">País</label>
+          <input type="text" class="form-control" id="pais" value="Colombia">
+        </div>
+        <div class="d-grid gap-2 d-md-flex justify-content-md-end mt-3">
+          <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#addResidentModal">
+            Añadir información
+          </button>
+          <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#editResidentModal">
+            Editar
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<!-- Modal Añadir Residencia -->
+<div class="modal fade" id="addResidentModal" tabindex="-1" aria-labelledby="addResidentModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      
+      <!-- Header -->
+      <div class="modal-header">
+        <h5 class="modal-title" id="addResidentModalLabel">Añadir información de residencia</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+      </div>
+      
+      <!-- Body -->
+      <div class="modal-body">
+        <form id="addResidentForm">
+          <div class="mb-3">
+            <label for="add-calle" class="form-label">Dirección</label>
+            <input type="text" class="form-control" id="add-calle" placeholder="Ej: Calle 123 #45-67">
+          </div>
+          <div class="mb-3">
+            <label for="add-ciudad" class="form-label">Ciudad</label>
+            <input type="text" class="form-control" id="add-ciudad" placeholder="Ej: Medellín">
+          </div>
+          <div class="mb-3">
+            <label for="add-pais" class="form-label">País</label>
+            <input type="text" class="form-control" id="add-pais" placeholder="Ej: Colombia">
+          </div>
+        </form>
+      </div>
+      
+      <!-- Footer -->
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+        <button type="submit" form="addResidentForm" class="btn btn-success">Guardar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal Editar Residencia -->
+<div class="modal fade" id="editResidentModal" tabindex="-1" aria-labelledby="editResidentModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      
+      <!-- Header -->
+      <div class="modal-header">
+        <h5 class="modal-title" id="editResidentModalLabel">Editar información de residencia</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+      </div>
+      
+      <!-- Body -->
+      <div class="modal-body">
+        <form id="editResidentForm">
+          <div class="mb-3">
+            <label for="edit-calle" class="form-label">Dirección</label>
+            <input type="text" class="form-control" id="edit-calle" value="Calle 123 #45-67">
+          </div>
+          <div class="mb-3">
+            <label for="edit-ciudad" class="form-label">Ciudad</label>
+            <input type="text" class="form-control" id="edit-ciudad" value="Medellín">
+          </div>
+          <div class="mb-3">
+            <label for="edit-pais" class="form-label">País</label>
+            <input type="text" class="form-control" id="edit-pais" value="Colombia">
+          </div>
+        </form>
+      </div>
+      
+      <!-- Footer -->
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+        <button type="submit" form="editResidentForm" class="btn btn-warning">Guardar cambios</button>
+      </div>
+    </div>
+  </div>
+</div>

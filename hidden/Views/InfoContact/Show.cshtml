@@ -1,0 +1,118 @@
+<div class="container mt-5">
+    <div class="card">
+        <div class="card-header">
+            <ul class="nav nav-tabs card-header-tabs">
+                <li class="nav-item">
+                    <a class="nav-link" asp-area="" asp-controller="Users" asp-action="Show">General</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" asp-area="" asp-controller="InfoResident" asp-action="Show">Inf de residencia</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" asp-area="" asp-controller="InfoContact" asp-action="Show">Inf de contacto</a>
+                </li>
+            </ul>
+        </div>
+        <div class="card-body">
+            <h5 class="card-title">Información de contacto de Pedro</h5>
+            <form>
+                <div class="mb-3">
+                    <label for="telefono" class="form-label">Teléfono</label>
+                    <input type="tel" class="form-control" id="telefono" value="32434">
+                </div>
+                <div class="mb-3">
+                    <label for="celular" class="form-label">Celular</label>
+                    <input type="tel" class="form-control" id="celular" value="300-123-4567">
+                </div>
+                <div class="mb-3">
+                    <label for="correo-alternativo" class="form-label">Correo alternativo</label>
+                    <input type="email" class="form-control" id="correo-alternativo" value="pedro.g@outlook.com">
+                </div>
+                <div class="d-grid gap-2 d-md-flex justify-content-md-end mt-3">
+                    <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#addContactModal">
+                        Añadir información
+                    </button>
+                    <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#editContactModal">
+                        Editar
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<!-- Modal Añadir Contacto -->
+<div class="modal fade" id="addContactModal" tabindex="-1" aria-labelledby="addContactModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+      
+            <!-- Header -->
+            <div class="modal-header">
+                <h5 class="modal-title" id="addContactModalLabel">Añadir información de contacto</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+            </div>
+      
+            <!-- Body -->
+            <div class="modal-body">
+                <form id="addContactForm">
+                    <div class="mb-3">
+                        <label for="add-telefono" class="form-label">Teléfono</label>
+                        <input type="tel" class="form-control" id="add-telefono" placeholder="Ej: 604-1234567">
+                    </div>
+                    <div class="mb-3">
+                        <label for="add-celular" class="form-label">Celular</label>
+                        <input type="tel" class="form-control" id="add-celular" placeholder="Ej: 300-123-4567">
+                    </div>
+                    <div class="mb-3">
+                        <label for="add-correo-alt" class="form-label">Correo alternativo</label>
+                        <input type="email" class="form-control" id="add-correo-alt" placeholder="Ej: usuario@outlook.com">
+                    </div>
+                </form>
+            </div>
+      
+            <!-- Footer -->
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                <button type="submit" form="addContactForm" class="btn btn-success">Guardar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal Editar Contacto -->
+<div class="modal fade" id="editContactModal" tabindex="-1" aria-labelledby="editContactModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+      
+            <!-- Header -->
+            <div class="modal-header">
+                <h5 class="modal-title" id="editContactModalLabel">Editar información de contacto</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+            </div>
+      
+            <!-- Body -->
+            <div class="modal-body">
+                <form id="editContactForm">
+                    <div class="mb-3">
+                        <label for="edit-telefono" class="form-label">Teléfono</label>
+                        <input type="tel" class="form-control" id="edit-telefono" value="32434">
+                    </div>
+                    <div class="mb-3">
+                        <label for="edit-celular" class="form-label">Celular</label>
+                        <input type="tel" class="form-control" id="edit-celular" value="300-123-4567">
+                    </div>
+                    <div class="mb-3">
+                        <label for="edit-correo-alt" class="form-label">Correo alternativo</label>
+                        <input type="email" class="form-control" id="edit-correo-alt" value="pedro.g@outlook.com">
+                    </div>
+                </form>
+            </div>
+      
+            <!-- Footer -->
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                <button type="submit" form="editContactForm" class="btn btn-warning">Guardar cambios</button>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,109 @@
+<div class="container mt-5">
+  <div class="card">
+    <div class="card-header">
+      <ul class="nav nav-tabs card-header-tabs">
+        <li class="nav-item">
+          <a class="nav-link active" asp-area="" asp-controller="Users" asp-action="Show">General</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" asp-area="" asp-controller="InfoResident" asp-action="Show">Inf de residencia</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" asp-area="" asp-controller="InfoContact" asp-action="Show">Inf de contacto</a>
+        </li>
+      </ul>
+    </div>
+    <div class="card-body">
+      <h5 class="card-title">Datos generales de Pedro</h5>
+      <form>
+        <div class="mb-3">
+          <label for="nombres" class="form-label">Nombres</label>
+          <input type="text" class="form-control" id="nombres" value="Pedro" disabled>
+        </div>
+        <div class="mb-3">
+          <label for="apellidos" class="form-label">Apellidos</label>
+          <input type="text" class="form-control" id="apellidos" value="Garcia" disabled>
+        </div>
+        <div class="mb-3">
+          <label for="correo" class="form-label">Correo</label>
+          <input type="email" class="form-control" id="correo" value="pedro@gmail.com" disabled>
+        </div>
+        <div class="mb-3">
+          <label for="tipo-id" class="form-label">Tipo de identificación</label>
+          <input type="text" class="form-control" id="tipo-id" value="Cédula de Ciudadanía" disabled>
+        </div>
+        <div class="mb-3">
+          <label for="numero-id" class="form-label">Número de identificación</label>
+          <input type="text" class="form-control" id="numero-id" value="123456789" disabled>
+        </div>
+        <div class="mb-3">
+          <label for="genero" class="form-label">Género</label>
+          <input type="text" class="form-control" id="genero" value="Masculino" disabled>
+        </div>
+        <div class="mb-3">
+          <label for="edad" class="form-label">Edad</label>
+          <input type="number" class="form-control" id="edad" value="30" disabled>
+        </div>
+        <div class="d-grid gap-2 d-md-flex justify-content-md-end mt-3">
+          <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#editModal">
+            Editar
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<!-- Modal Editar Usuario -->
+<div class="modal fade" id="editModal" tabindex="-1" aria-labelledby="editModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      
+      <!-- Header -->
+      <div class="modal-header">
+        <h5 class="modal-title" id="editModalLabel">Editar datos de Pedro</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+      </div>
+      
+      <!-- Body con formulario -->
+      <div class="modal-body">
+        <form id="editUserForm">
+          <div class="mb-3">
+            <label for="edit-nombres" class="form-label">Nombres</label>
+            <input type="text" class="form-control" id="edit-nombres" value="Pedro">
+          </div>
+          <div class="mb-3">
+            <label for="edit-apellidos" class="form-label">Apellidos</label>
+            <input type="text" class="form-control" id="edit-apellidos" value="Garcia">
+          </div>
+          <div class="mb-3">
+            <label for="edit-correo" class="form-label">Correo</label>
+            <input type="email" class="form-control" id="edit-correo" value="pedro@gmail.com">
+          </div>
+          <div class="mb-3">
+            <label for="edit-tipo-id" class="form-label">Tipo de identificación</label>
+            <input type="text" class="form-control" id="edit-tipo-id" value="Cédula de Ciudadanía">
+          </div>
+          <div class="mb-3">
+            <label for="edit-numero-id" class="form-label">Número de identificación</label>
+            <input type="text" class="form-control" id="edit-numero-id" value="123456789">
+          </div>
+          <div class="mb-3">
+            <label for="edit-genero" class="form-label">Género</label>
+            <input type="text" class="form-control" id="edit-genero" value="Masculino">
+          </div>
+          <div class="mb-3">
+            <label for="edit-edad" class="form-label">Edad</label>
+            <input type="number" class="form-control" id="edit-edad" value="30">
+          </div>
+        </form>
+      </div>
+      
+      <!-- Footer con acciones -->
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+        <button type="submit" form="editUserForm" class="btn btn-primary">Guardar cambios</button>
+      </div>
+    </div>
+  </div>
+</div>

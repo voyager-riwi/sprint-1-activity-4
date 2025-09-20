@@ -1,0 +1,93 @@
+<div class="container mt-5">
+    <div class="row mb-3 align-items-center">
+        <div class="col-8">
+            <h2>Listado de usuarios</h2>
+        </div>
+        <div class="col-4 text-end">
+            <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#datosGeneralesModal">
+                Crear nuevo
+            </button>        </div>
+    </div>
+    <table class="table table-bordered table-striped">
+        <thead class="bg-primary text-white">
+        <tr>
+            <th>Nombres</th>
+            <th>Apellidos</th>
+            <th>Acciones</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>Pedro</td>
+            <td>Garcia</td>
+            <td>
+                <button type="button" class="btn btn-primary btn-sm"><a class="nav-link text-dark" asp-area="" asp-controller="Users" asp-action="Show">Detalles</a></button>
+            </td>
+        </tr>
+        <tr>
+            <td>Emanuel</td>
+            <td>Polo</td>
+            <td>
+                <button type="button" class="btn btn-primary btn-sm"><a class="nav-link text-dark" asp-area="" asp-controller="Users" asp-action="Show">Detalles</a></button>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+<div class="modal fade" id="datosGeneralesModal" tabindex="-1" aria-labelledby="datosGeneralesLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="datosGeneralesLabel">Datos generales del usuario</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="mb-3">
+            <label for="nombres" class="form-label">Nombres</label>
+            <input type="text" class="form-control" id="nombres">
+          </div>
+          <div class="mb-3">
+            <label for="apellidos" class="form-label">Apellidos</label>
+            <input type="text" class="form-control" id="apellidos">
+          </div>
+          <div class="mb-3">
+            <label for="correo" class="form-label">Correo</label>
+            <input type="email" class="form-control" id="correo">
+          </div>
+          <div class="mb-3">
+            <label for="tipo-id" class="form-label">Tipo de identificación</label>
+            <select class="form-select" id="tipo-id">
+              <option selected>Seleccione...</option>
+              <option>Cédula de Ciudadanía</option>
+              <option>Tarjeta de Identidad</option>
+              <option>Pasaporte</option>
+            </select>
+          </div>
+          <div class="mb-3">
+            <label for="numero-id" class="form-label">Número de identificación</label>
+            <input type="text" class="form-control" id="numero-id">
+          </div>
+          <div class="mb-3">
+            <label for="genero" class="form-label">Género</label>
+            <select class="form-select" id="genero">
+              <option selected>Seleccione...</option>
+              <option>Masculino</option>
+              <option>Femenino</option>
+              <option>Otro</option>
+            </select>
+          </div>
+          <div class="mb-3">
+            <label for="edad" class="form-label">Edad</label>
+            <input type="number" class="form-control" id="edad">
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+        <button type="submit" class="btn btn-primary">Guardar</button>
+      </div>
+    </div>
+  </div>
+</div>
